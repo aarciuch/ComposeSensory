@@ -55,7 +55,7 @@ class AccelerometerSensorVM : ViewModel() {
        _sensorManager.registerListener(_sensorListener, _sensor, SensorManager.SENSOR_DELAY_UI)
     }
 
-    fun stop() {
+                                                    fun stop() {
        _sensorManager.unregisterListener(_sensorListener)
     }
 }
