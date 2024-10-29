@@ -23,9 +23,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -50,12 +47,14 @@ class MainActivity2 : ComponentActivity() {
 fun StartScreen2(api : Call<List<String>>, modifier: Modifier) {
     val mContext = LocalContext.current
     var info by remember { mutableStateOf("") }
+    var lista by remember { mutableStateOf(emptyList<String>()) }
     LaunchedEffect(api) {
         api.enqueue(object : Callback<List<String>> {
             override fun onResponse(
                 call: Call<List<String>>,
                 response: Response<List<String>>,
             ) {
+                lista = response.body()!!
                 Log.i("RETROFIT", "${call} ${response.body()}")
                 info = "SUCCESS: ${call} \nRESPONSE: ${response.body()}"
             }
@@ -81,6 +80,13 @@ fun StartScreen2(api : Call<List<String>>, modifier: Modifier) {
                 text = "${info}",
                 modifier = modifier
                     .background(Color.White)
+            )
+        }
+        items(lista) { imie->
+            Text(text = "${imie}",
+                modifier = Modifier
+                    .fillParentMaxWidth()
+                    .background(Color.Yellow)
             )
         }
     }

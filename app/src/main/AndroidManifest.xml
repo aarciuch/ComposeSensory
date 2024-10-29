@@ -5,6 +5,7 @@
     <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="true"/>
     <uses-feature android:name="android.hardware.sensor.stepcounter" android:required="true"/>
     <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -15,7 +16,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ComposeSensory"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <!--<application android:networkSecurityConfig="@xml/network_security_config">-->
+        <activity
+            android:name=".MainActivity2"
+            android:exported="false"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"

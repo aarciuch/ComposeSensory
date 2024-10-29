@@ -105,6 +105,11 @@ dependencies {
  //   val coroutine_version ="1.3.9"
     implementation(libs.kotlinx.coroutines.android)
 
+    // retrofit
+    implementation (libs.retrofit)
+    // gson converter
+    implementation (libs.converter.gson)
+
 }
 // Allow references to generated code
 kapt {
