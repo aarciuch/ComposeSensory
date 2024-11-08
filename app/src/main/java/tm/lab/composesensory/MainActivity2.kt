@@ -34,7 +34,7 @@ class MainActivity2 : ComponentActivity() {
         super.onCreate(savedInstanceState)
         //enableEdgeToEdge()
         setContent {
-           val apiInterface = ApiInterface.create().getTable()
+           val apiInterface = ApiInterface.create(LocalContext.current).getTable()
            ComposeSensoryTheme {
                 StartScreen2(apiInterface,
                     modifier = Modifier)
