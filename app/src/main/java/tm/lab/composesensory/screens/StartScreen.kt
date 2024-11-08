@@ -1,6 +1,7 @@
 package tm.lab.composesensory.screens
 
 import android.content.Intent
+import android.content.res.Resources.Theme
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
