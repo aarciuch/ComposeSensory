@@ -2,7 +2,6 @@ package tm.lab.composesensory.screens
 
 import android.content.Intent
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
@@ -22,7 +21,8 @@ fun StartScreen(navController: NavController) {
     Column(modifier = Modifier
         .background(Color.Black)) {
         Text(modifier = Modifier
-            .padding(top = 8.dp, start = 16.dp), text = "StartScreen")
+            .padding(top = 8.dp, start = 16.dp),
+            text = "StartScreen")
         Button (modifier = Modifier
             .padding(8.dp),
             onClick = {

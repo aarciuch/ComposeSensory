@@ -6,22 +6,8 @@ import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import android.util.Log
-import androidx.compose.runtime.MutableState
-import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.mutableStateOf
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.asLiveData
-import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.FlowCollector
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.flowOf
-import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.launch
 
 class AccelerometerSensorVM : ViewModel() {
 
@@ -55,7 +41,7 @@ class AccelerometerSensorVM : ViewModel() {
        _sensorManager.registerListener(_sensorListener, _sensor, SensorManager.SENSOR_DELAY_UI)
     }
 
-                                                    fun stop() {
+    fun stop() {
        _sensorManager.unregisterListener(_sensorListener)
     }
 }
