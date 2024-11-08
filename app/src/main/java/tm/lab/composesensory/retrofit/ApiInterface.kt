@@ -8,12 +8,15 @@ import retrofit2.http.GET
 
 interface ApiInterface {
 
-    @GET("table.json")
+    @GET("static/json/table.json")
     fun getTable() : Call<List<String>>
+
+    @GET("db")
+    fun getDB() : Call<Array<List<String>>>
 
     companion object {
 
-        var BASE_URL = "http://10.7.38.161:5000/static/json/"
+        var BASE_URL = "https://10.7.38.161:5000/"
 
         fun create() : ApiInterface {
 
